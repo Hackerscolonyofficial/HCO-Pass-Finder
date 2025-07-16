@@ -31,7 +31,7 @@ This tool is built for educational awareness, ethical use, and password security
 ```bash
 pkg update && pkg upgrade
 pkg install python git -y
-git clone https://github.com/<your-username>/HCO-PassFinder
+git clone https://github.com/Hackerscolonyofficial/HCO-Pass-Finder.git
 cd HCO-PassFinder
 pip install -r requirements.txt
 bash start.sh
