@@ -1,0 +1,1 @@
+# Match known hashes to common user-derived patterns
