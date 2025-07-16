@@ -4,6 +4,12 @@ import hashlib
 import time
 import os
 
+R = "\033[1;31m"
+G = "\033[1;32m"
+Y = "\033[1;33m"
+C = "\033[1;36m"
+W = "\033[0m"
+
 def load_user_inputs(file_path="user_inputs.txt"):
     if not os.path.exists(file_path):
         return []
@@ -41,33 +47,32 @@ def hash_match(target_hash, guesses, mode="md5"):
         else:
             continue
 
-        print(f"🔎 Trying: {guess}")
+        print(f"{C}🔎 Trying: {guess}{W}")
         if h == target_hash:
             return guess
         time.sleep(0.1)
     return None
 
-# Main Execution
-print("\n🔐 HCO Hash Solver")
-target_hash = input("Enter hash (MD5 or SHA1): ").strip()
+print(f"\n{C}🔐 HCO Hash Solver{W}")
+target_hash = input(f"{Y}Enter hash (MD5 or SHA1): {W}").strip()
 
 mode = "md5" if len(target_hash) == 32 else "sha1"
-print(f"🧠 Assuming hash type: {mode.upper()}")
+print(f"{C}🧠 Assuming hash type: {mode.upper()}{W}")
 
 info = load_user_inputs()
 if not info:
-    print("⚠️ No user info found in user_inputs.txt")
-    input("Press Enter to return to menu...")
+    print(f"{R}⚠️ No user info found in user_inputs.txt{W}")
+    input(f"{Y}Press Enter to return to menu...{W}")
     exit()
 
 guesses = generate_guesses(info)
-print(f"\n🔁 Total guesses to try: {len(guesses)}\n")
+print(f"\n{Y}🔁 Total guesses to try: {len(guesses)}{W}\n")
 
 matched = hash_match(target_hash, guesses, mode)
 
 if matched:
-    print(f"\n✅ Hash cracked! 🔓 Password is: {matched}")
+    print(f"\n{G}✅ Hash cracked! 🔓 Password is: {matched}{W}")
 else:
-    print("\n❌ No match found.")
+    print(f"\n{R}❌ No match found.{W}")
 
-input("\nPress Enter to return to menu...")
+input(f"\n{Y}Press Enter to return to menu...{W}")
