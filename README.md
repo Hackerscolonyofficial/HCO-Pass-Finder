@@ -35,7 +35,7 @@ git clone https://github.com/Hackerscolonyofficial/HCO-Pass-Finder.git
 cd HCO-PassFinder
 pip install -r requirements.txt
 chmod +x start.sh
-bash start.sh
+./start.sh
 ```
 
 ---
