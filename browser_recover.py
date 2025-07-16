@@ -3,11 +3,16 @@
 import time
 import random
 
-print("\n🧠 HCO Browser Password Recovery")
-print("🔍 Scanning 'LoginData' (simulated)...\n")
+R = "\033[1;31m"
+G = "\033[1;32m"
+Y = "\033[1;33m"
+C = "\033[1;36m"
+W = "\033[0m"
+
+print(f"\n{C}🧠 HCO Browser Password Recovery{W}")
+print(f"{Y}🔍 Scanning 'LoginData' (simulated)...{W}\n")
 time.sleep(1.5)
 
-# Simulated password entries
 entries = [
     {"site": "facebook.com", "username": "azhar@hco.com", "password": "Azhar@123"},
     {"site": "instagram.com", "username": "azhar_colony", "password": "HCOrocks2025"},
@@ -16,11 +21,11 @@ entries = [
 ]
 
 for entry in entries:
-    print(f"🌐 Site     : {entry['site']}")
-    print(f"👤 Username : {entry['username']}")
-    print(f"🔑 Password : {entry['password']}")
-    print("-" * 35)
+    print(f"{G}🌐 Site     : {entry['site']}{W}")
+    print(f"{C}👤 Username : {entry['username']}{W}")
+    print(f"{Y}🔑 Password : {entry['password']}{W}")
+    print(f"{R}" + "-" * 35 + f"{W}")
     time.sleep(random.uniform(0.8, 1.2))
 
-print("\n✅ Simulated browser recovery complete.")
-input("\nPress Enter to return to menu...")
+print(f"\n{G}✅ Simulated browser recovery complete.{W}")
+input(f"\n{Y}Press Enter to return to menu...{W}")
