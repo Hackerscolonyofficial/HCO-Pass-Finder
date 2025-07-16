@@ -17,7 +17,6 @@ def main_menu():
     [1] Recover Browser Passwords
     [2] Smart Password Guess
     [3] Crack Hash from Info
-    [4] WiFi Password Viewer
     [0] Exit
     """)
 
